@@ -1,8 +1,15 @@
 package sec.project.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import sec.project.domain.Signup;
 
-public interface SignupRepository extends JpaRepository<Signup, Long> {
+import java.util.List;
+
+public interface SignupRepository {
+
+    Signup findOne(Long id);
+
+    List<Signup> findAll();
+
+    void save(Signup signup);
 
 }
